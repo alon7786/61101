@@ -3,7 +3,6 @@
 	further reading 5.c
 	1. sum_powers_2
 	2. sine
-	3. sum_divisors_1
 */
 
 int gcd( int a, int b )
@@ -39,12 +38,7 @@ int sum_divisors_1( int n )
 
 // lecture 7
 
-void swap( int *pa, int *pb )
-{
-	int temp = *pa;
-	*pa = *pb;
-	*pb = temp;
-}
+void swap( int *pa, int *pb );
 
 // lecture 8
 /*
@@ -136,6 +130,7 @@ int bin_search_first( int key, int *a, int n )
 			high = mid - 1;
 		}
 	}
+	return result;
 }
 
 int bin_search_last( int key, int *a, int n )
@@ -156,6 +151,7 @@ int bin_search_last( int key, int *a, int n )
 			low = mid + 1;
 		}
 	}
+	return result;
 }
 
 // lecture 13
