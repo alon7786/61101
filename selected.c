@@ -3,32 +3,12 @@
 	further reading 5.c
 	1. sum_powers_2
 	2. sine
+	3. gcd
+	4. sum_divisors_1
 */
 
-int gcd( int a, int b )
-{
-	while( ( a > 0 ) && ( b > 0 ) )
-	{
-		if( a > b )
-			a %= b;
-		else
-			b %= a;
-	}
-	return a + b;
-}
-
-int sum_divisors_1( int n )
-{
-	unsigned int sum = 1, index;
-	if( n == 1 )
-		return 1;
-	for( index = 2; i * i < n; index++ )
-		if( n % i == 0 )
-			sum += i + n / i;
-	if( i * i == n )
-		sum += i;
-	return sum + n;
-}
+int gcd( int a, int b );
+int sum_divisors_1( int n );
 
 // lecture 6
 /*
@@ -187,7 +167,7 @@ int split( int *a, int left, int right )
 	int i, last = left; // pivot = a[ left ]
 	if( left < right )
 	{
-		for( i = left + 1; i < right; i++ )
+		for( i = left + 1; i <= right; i++ )
 			if( a[ i ] <= a[ left ] )
 				swap( a + ( ++last ), a + i );
 		swap( a + left, a + last );
